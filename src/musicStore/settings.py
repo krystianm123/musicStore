@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
     'product',
 ]
 
@@ -152,6 +153,18 @@ if DEBUG:
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 SITE_ID = 1
+
+SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_PROVIDERS = {
+
+    'facebook': {
+        'SCOPE': ['email','public_profile'],
+        'FIELDS': [
+            'id',
+            'email',
+            'name']
+    }
+}
 
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'

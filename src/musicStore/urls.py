@@ -23,15 +23,17 @@ from django.contrib import admin
 from profiles import views as profiles_views
 from contact import views as contact_views
 from product import views as product_views
-
+from news import views as news_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #url(r'', include('product.urls')),
     url(r'^$', profiles_views.home, name='home'),
-    url(r'^about/$', profiles_views.about, name='about'),
     url(r'^profile/$', profiles_views.userProfile, name='profile'),
     url(r'^contact/$', contact_views.contact, name='contact'),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^product/$', product_views.product_list, name="product"),
+    url(r'^news/$', news_views.news_list, name="news"),
+
 
 
 

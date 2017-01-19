@@ -15,8 +15,8 @@ def contact(request):
     if form.is_valid():
         name = form.cleaned_data['name']
         comment = form.cleaned_data['comment']
-        subject = 'Message from mysite.com'
-        message = '%s %s' %(comment,name)
+        subject = 'Message from musicStore'
+        message = '%s %s' %(comment,name,)
         emailFrom = form.cleaned_data['email']
         emailTo = [settings.EMAIL_HOST_USER]
         send_mail(subject, message, emailFrom, emailTo, fail_silently=True )

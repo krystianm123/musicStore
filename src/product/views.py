@@ -21,3 +21,4 @@ def product_detail(request):
         "title": "Detail"
     }
     return render(request, "product_list.html", context)
+

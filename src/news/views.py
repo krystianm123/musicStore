@@ -7,9 +7,10 @@ from django.utils import timezone
 
 
 def news_list(request):
-    queryset = news.objects.all()
+    queryset = news.objects.all().order_by("-created_date")
     context = {
         "object2_list": queryset,
         "title": "list news"
     }
     return render(request, 'news_list.html', context)
+

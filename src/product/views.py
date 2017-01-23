@@ -15,8 +15,7 @@ def product_list(request):
     return render(request, template, context)
 
 def product_detail(request):
-    #istance = product.objects.get(id=1)
-    instance = get_object_or_404(product, id=2)
+    isinstance(get_object_or_404(product, id=1))
     context = {
         "title": "Detail"
     }

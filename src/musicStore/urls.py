@@ -24,16 +24,14 @@ from profiles import views as profiles_views
 from contact import views as contact_views
 from product import views as product_views
 from news import views as news_views
-from cart import  views as cart_views
+from cart import views as cart_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #url(r'^product/$', include('product.urls')),
-    #url(r'^$', profiles_views.home, name='home'),
     url(r'^$', product_views.product_list, name='home'),
+    url(r'^product/', include('product.urls', namespace='product')),
     url(r'^profile/$', profiles_views.userProfile, name='profile'),
     url(r'^contact/$', contact_views.contact, name='contact'),
     url(r'^accounts/', include('allauth.urls')),
-    url(r'^product/$', product_views.product_list, name="product"),
     url(r'^news/$', news_views.news_list, name="news"),
     url(r'^cart/$', cart_views.Cart, name="cart"),
 

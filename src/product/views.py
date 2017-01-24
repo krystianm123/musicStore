@@ -14,10 +14,12 @@ def product_list(request):
     template = 'product_list.html'
     return render(request, template, context)
 
-def product_detail(request):
-    isinstance(get_object_or_404(product, id=1))
+def product_detail(request, id=None):
+    #instance = product.objects.get(id=1)
+    instance = get_object_or_404(product, id=id)
     context = {
-        "title": "Detail"
+        "title": instance.author,
+        "instance": instance,
     }
-    return render(request, "product_list.html", context)
+    return render(request, "product_detail.html", context)
 

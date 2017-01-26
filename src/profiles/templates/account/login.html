@@ -14,17 +14,20 @@
 {% if socialaccount_providers %}
 
 
-<div class="socialaccount_ballot" >
+<!--<div class="socialaccount_ballot" >
+
+     <h3><a href="{% provider_login_url "facebook" method="oauth2" %}">Facebook</a></h3>
+
+    <h4>Or</h4>-->
+
+<a href="{% provider_login_url "facebook" method="oauth2" %}" class="btn btn-block btn-social btn-facebook">
+    <span class="fa fa-facebook"></span> Sign in with Facebook
+  </a>
+<h4>Or</h4>
 
 
- <h3>   {% include "socialaccount/snippets/provider_list.html" with process="login" %}</h3>
-  <h4>Or</h4>
 
-
-
-
-
-</div>
+<!--</div>-->
 
 {% include "socialaccount/snippets/login_extra.html" %}
 
